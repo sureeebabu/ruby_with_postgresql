@@ -1,0 +1,10 @@
+1. rails new appname -d=postgresql
+2. open config/database.yml  ==> 
+    username: postgres
+    password: sureshbabu
+    host: localhost
+
+3. rails db:create       --> create DB 
+4. To create table       --> rails generate model users username:string useremail:string usermobno:integer
+5. generate table in DB  --> rake db:migrate
+

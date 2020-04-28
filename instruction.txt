@@ -1,3 +1,15 @@
+To install bootstrap      --> open Gemfile --> gem 'bootstrap', '~> 4.4.1'
+To install font-awesome   --> open Gemfile --> gem 'font-awesome-rails'
+To install Jquery         --> open Gemfile --> gem 'jquery-rails'
+
+important Point --> Open assets/stylesheets --> Change css to scss
+
+Open assets/stylesheets/application.scss
+@import "bootstrap";
+@import "font-awesome";
+
+------------------------------------
+
 1. rails new appname -d=postgresql
 2. open config/database.yml  ==> 
     username: postgres

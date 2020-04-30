@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   # GET method to get all products from database
   def index
+    @sno = 0;
     @products = Product.all
   end
  

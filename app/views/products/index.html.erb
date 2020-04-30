@@ -8,6 +8,7 @@
         <%= link_to 'Add Product', new_product_path, class: 'btn btn-success'%>
       </div>
     </p>
+    <div class="table-responsive">
     <table id="products" class="table table-bordered table-hover" cellspacing="0" width="100%">
       <thead>
       <tr>
@@ -27,18 +28,25 @@
             <td><%= product.price %></td>
             <td><%= truncate(product.short_description, :length => 75) %></td>
             <td><%= truncate(product.full_description, :length => 150) %></td>
-            <td class="text-center"><%= product.updated_at %></td>
-            <td><%= product.created_at %></td>
+            <td class="text-center">
+                <%= product.updated_at.strftime("%d-%m-%Y %I:%M %p") %>
+            </td>
+            <td><%= product.created_at.strftime("%d-%m-%Y %R") %></td>
             <td class="text-center">
               <div class="btn-group">
-                <%= link_to 'Show', product_path(product), class: 'btn btn-primary' %>
-                <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-success' %>
-                <%= link_to 'Delete', product_path(product), method: :delete, class: 'btn btn-danger' %>
+                <%# <%= link_to 'Show', product_path(product), class: 'btn btn-primary' %>
+                <%# <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-success' add percentage & greater than after uncommenting %> 
+                <%# <%= link_to 'Delete', product_path(product), method: :delete, class: 'btn btn-danger' %>
+                <%= link_to(content_tag(:i,' View', class: 'fa fa-eye'),product_path(product),  title: 'View Product' , class: 'btn btn-success') %>
+                <%= link_to(content_tag(:i,' Edit', class: 'fa fa-edit'),edit_product_path(product),  title: 'Edit Product' , class: 'btn btn-warning') %>
+                <%= link_to(content_tag(:i,' Delete', class: 'fa fa-trash-o'),product_path(product), method: :delete, title: 'Delete' , class: 'btn btn-danger') %>
+
               </div>
             </td>
           </tr>
       <% end %>
       </tbody>
     </table>
+    </div>
   </div>
 </div>
